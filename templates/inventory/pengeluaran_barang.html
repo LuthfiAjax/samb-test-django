@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Pengeluaran Barang</title>
+  </head>
+  <body>
+    <h1>Form Pengeluaran Barang</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label for="trxout_no">Nomor Transaksi:</label>
+      <input type="text" name="trxout_no" id="trxout_no" />
+      <br />
+      <label for="whs_idf">Gudang:</label>
+      <select name="whs_idf" id="whs_idf">
+        <option value="1">Gudang A</option>
+        <option value="2">Gudang B</option>
+      </select>
+      <br />
+      <label for="trxout_date">Tanggal:</label>
+      <input type="date" name="trxout_date" id="trxout_date" />
+      <br />
+      <label for="trxout_supp_idf">Supplier:</label>
+      <select name="trxout_supp_idf" id="trxout_supp_idf">
+        <option value="1">Supplier A</option>
+        <option value="2">Supplier B</option>
+      </select>
+      <br />
+      <label for="trxout_notes">Catatan:</label>
+      <textarea name="trxout_notes" id="trxout_notes"></textarea>
+      <br />
+      <h2>Detail Barang:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Produk</th>
+            <th>Jumlah Dus</th>
+            <th>Jumlah Pcs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <select name="trxout_product_1" id="trxout_product_1">
+                <option value="1">Produk A</option>
+                <option value="2">Produk B</option>
+              </select>
+            </td>
+            <td><input type="number" name="trxout_qty_dus_1" id="trxout_qty_dus_1" /></td>
+            <td><input type="number" name="trxout_qty_pcs_1" id="trxout_qty_pcs_1" /></td>
+          </tr>
+          <tr>
+            <td>
+              <select name="trxout_product_2" id="trxout_product_2">
+                <option value="1">Produk A</option>
+                <option value="2">Produk B</option>
+              </select>
+            </td>
+            <td><input type="number" name="trxout_qty_dus_2" id="trxout_qty_dus_2" /></td>
+            <td><input type="number" name="trxout_qty_pcs_2" id="trxout_qty_pcs_2" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <input type="submit" value="Simpan" />
+    </form>
+  </body>
+</html>

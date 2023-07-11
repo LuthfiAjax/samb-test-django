@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Penerimaan Barang</title>
+  </head>
+  <body>
+    <h1>Form Penerimaan Barang</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label for="trxin_no">Nomor Transaksi:</label>
+      <input type="text" name="trxin_no" id="trxin_no" />
+      <br />
+      <label for="whs_idf">Gudang:</label>
+      <select name="whs_idf" id="whs_idf">
+        <option value="1">Gudang A</option>
+        <option value="2">Gudang B</option>
+      </select>
+      <br />
+      <label for="trxin_date">Tanggal:</label>
+      <input type="date" name="trxin_date" id="trxin_date" />
+      <br />
+      <label for="trxin_supp_idf">Supplier:</label>
+      <select name="trxin_supp_idf" id="trxin_supp_idf">
+        <option value="1">Supplier A</option>
+        <option value="2">Supplier B</option>
+      </select>
+      <br />
+      <label for="trxin_notes">Catatan:</label>
+      <textarea name="trxin_notes" id="trxin_notes"></textarea>
+      <br />
+      <h2>Detail Barang:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Produk</th>
+            <th>Jumlah Dus</th>
+            <th>Jumlah Pcs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <select name="trxin_product_1" id="trxin_product_1">
+                <option value="1">Produk A</option>
+                <option value="2">Produk B</option>
+              </select>
+            </td>
+            <td><input type="number" name="trxin_qty_dus_1" id="trxin_qty_dus_1" /></td>
+            <td><input type="number" name="trxin_qty_pcs_1" id="trxin_qty_pcs_1" /></td>
+          </tr>
+          <tr>
+            <td>
+              <select name="trxin_product_2" id="trxin_product_2">
+                <option value="1">Produk A</option>
+                <option value="2">Produk B</option>
+              </select>
+            </td>
+            <td><input type="number" name="trxin_qty_dus_2" id="trxin_qty_dus_2" /></td>
+            <td><input type="number" name="trxin_qty_pcs_2" id="trxin_qty_pcs_2" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <input type="submit" value="Simpan" />
+    </form>
+  </body>
+</html>
